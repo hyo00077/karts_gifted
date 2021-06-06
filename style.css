@@ -586,8 +586,6 @@
     display: flex;
   }
 
-  -webkit-backface-visibility: hidden;
-
   /* Track */
   ::-webkit-scrollbar-track {
     background: #cecece;
