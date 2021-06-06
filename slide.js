@@ -12,6 +12,8 @@ $( document ).ready(function() {
         $("<div class='prev_button'></div>").appendTo("body");
         $("<div class='next_button'></div>").appendTo("body");
         $(".head_box").remove();
+        $(".active").remove();
+
 
         $(document).ready(function(){
             $(".container").slick({
