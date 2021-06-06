@@ -16,6 +16,8 @@
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: calc(var(--vw, 1vw)* 100);
     word-break: keep-all;
     scroll-behavior: smooth;
     overflow: hidden;
@@ -417,6 +419,8 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: calc(var(--vw, 1vw)* 100);
   }
 
   #canvas {
