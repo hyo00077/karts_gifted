@@ -609,9 +609,9 @@
     height: 100%;
   }
 
-  .slick-active {
+/*   .slick-active {
     display: flex;
-  }
+  } */
 
   /* Track */
   ::-webkit-scrollbar-track {
