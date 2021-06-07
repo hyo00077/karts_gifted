@@ -22,6 +22,7 @@
     scroll-behavior: smooth;
     overflow: hidden;
     color: white;
+    background-color: white;
   }
 
   #myCanvas {
@@ -411,7 +412,7 @@
     word-break: keep-all;
     scroll-behavior: smooth;
     overflow: hidden;
-    color: white;
+    background-color: black;
   }
 
   #myCanvas {
