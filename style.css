@@ -22,7 +22,7 @@
     scroll-behavior: smooth;
     overflow: hidden;
     color: white;
-    background-color: white;
+    background-color: black;
   }
 
   #myCanvas {
