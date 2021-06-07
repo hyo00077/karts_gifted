@@ -84,7 +84,7 @@ if (cont_width>=1024) {
     colorMode(HSB, 100);
     background(r, 100, 80);
   
-    if (cont_width > 1023) {
+    if (cont_width > 1024) {
       if (mouseIsPressed) {
         for (let index = 0; index < radius.length; index++) {
           radius[index] += speed;
