@@ -412,7 +412,6 @@
     word-break: keep-all;
     scroll-behavior: smooth;
     overflow: hidden;
-    background-color: black;
   }
 
   #myCanvas {
@@ -422,6 +421,7 @@
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     width: calc(var(--vw, 1vw)* 100);
+    background-color: black;
   }
 
   #canvas {
