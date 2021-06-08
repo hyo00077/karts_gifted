@@ -1,7 +1,9 @@
 /* Slider */
 .slick-slider
 {
-    position: relative;
+    position: absolute;
+    top:10%;
+    left:0%;
 
     display: block;
     box-sizing: border-box;
