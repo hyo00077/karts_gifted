@@ -16,8 +16,10 @@
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh)* 100);
+    height: -webkit-calc(var(--vh, 1vh)* 100);
     width: calc(var(--vw, 1vw)* 100);
+    width: -webkit-calc(var(--vw, 1vw)* 100);
     word-break: keep-all;
     scroll-behavior: smooth;
     overflow: hidden;
@@ -88,21 +90,27 @@
 
   .marquee span {
     display: inline-block;
-    padding-left: 100%;
-    animation: marquee 20s linear infinite;
+    /* padding-left: 100vw; */
+    animation: marquee 40s linear infinite;
+    -webkit-animation: marquee 40s linear infinite;
+
   }
 
   .marquee2 span {
-    animation-delay: 10s;
+    animation-delay: 20s;
+    -webkit-animation-delay: 20s;
   }
 
   @keyframes marquee {
     0% {
       transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+
     }
 
     100% {
       transform: translate(-100%, 0);
+      -webkit-transform: translate(-100%, 0);
     }
   }
 
@@ -408,8 +416,10 @@
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh)* 100);
+    height: -webkit-calc(var(--vh, 1vh)* 100);
     width: calc(var(--vw, 1vw)* 100);
+    width: -webkit-calc(var(--vw, 1vw)* 100);
     word-break: keep-all;
     scroll-behavior: smooth;
     overflow: hidden;
@@ -423,8 +433,10 @@
     flex-direction: column; */
     width: 100vw;
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh)* 100);
+    height: -webkit-calc(var(--vh, 1vh)* 100);
     width: calc(var(--vw, 1vw)* 100);
+    width: -webkit-calc(var(--vw, 1vw)* 100);
   }
 
   #canvas {
@@ -492,20 +504,25 @@
     display: inline-block;
     /* padding-left: 100vw; */
     animation: marquee 40s linear infinite;
+    -webkit-animation: marquee 40s linear infinite;
+
   }
 
   .marquee2 span {
     animation-delay: 20s;
-    /* padding-left: 100vw; */
+    -webkit-animation-delay: 20s;
   }
 
   @keyframes marquee {
     0% {
       transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+
     }
 
     100% {
       transform: translate(-100%, 0);
+      -webkit-transform: translate(-100%, 0);
     }
   }
 
@@ -606,9 +623,7 @@
     width: 50%;
   }
 
-polygon{
-  fill: white;
-}
+
 
   div.prev_button {
     position: absolute;
