@@ -11,6 +11,12 @@ $( document ).ready(function() {
         // $("body").add("div").addClass("next_button");
         $("<div class='prev_button'></div>").appendTo("body");
         $("<div class='next_button'></div>").appendTo("body");
+        $("<img class='prev_arrow' style='width:100%; height:100%;' type='image/svg+xml' src='prev_arrow.svg'>").appendTo(".prev_button");
+        $("<img class='next_arrow' style='width:100%; height:100%;' type='image/svg+xml' src='next_arrow.svg'>").appendTo(".next_button");
+
+
+
+
         $(".head_box").remove();
         $(".active").remove();
 
@@ -20,7 +26,7 @@ $( document ).ready(function() {
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                prevArrow: $('.prev_button'),
+                prevArrow: $('.prev_arrow'),
                 nextArrow: $('.next_button')
             });
         });

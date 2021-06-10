@@ -1,24 +1,22 @@
-
-
 // 캔버스 관련 변수
 let container = document.getElementById("myCanvas");
 let cont_width;
 let cont_height;
-cont_width = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).width);
-cont_height = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).height);
+cont_width = window.innerWidth;
+cont_height = window.innerHeight;
 
-if (cont_width>cont_height) {
+if (cont_width > 1023) {
   function windowResized() {
     loop();
-    cont_width = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).width);
-    cont_height = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).height);
+    cont_width = window.innerWidth;
+    cont_height = window.innerHeight;
     height = cont_height;
     width = cont_width;
     resizeCanvas(width, height);
   }
-  
+
   /////////////////
-  
+
   // 마우스 커서 확산 관련 변수
   let num_radius = 8;
   let radius = [];
@@ -31,7 +29,7 @@ if (cont_width>cont_height) {
   let end_x = 1;
   let end_y = 1;
   let speed = 100;
-  
+
   for (let index = 0; index < num_radius; index++) {
     let element = radius[index];
     element = 200;
@@ -39,15 +37,15 @@ if (cont_width>cont_height) {
     copy_radius.push(element);
   }
   //////////////////////////////////
-  
+
   // 클릭된 디브 가지고 오기
-  
-  
+
+
   // 선색상
-  
+
   let stroke_color = "rgb(255,255,255)";
   let back_color = "rgb(0,0,0)";
-  
+
   // 이미지 관련 변수
   let img_src = [];
   let img_list = [];
@@ -56,14 +54,15 @@ if (cont_width>cont_height) {
   let mouse_coord = [];
   for (let index = 0; index < 45; index++) {
     img_src.push("./source/background/" + index + ".jpg");
+    console.log(img_src[index]);
   }
-  
+
   function preload() {
     for (let i = 0; i < img_src.length; i++) {
       img_list.push(loadImage(img_src[i]));
     }
   }
-  
+
   function setup() {
     background(back_color);
     cont_width = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).width);
@@ -72,24 +71,24 @@ if (cont_width>cont_height) {
     width = cont_width;
     console.log(height, width);
     cnv = createCanvas(width, height);
-    cnv.id("canvas"); //myCanvas로 바꾸기 여차하면
+    cnv.id("canvas");
     cnv.parent(container);
     angleMode(RADIANS);
   }
-  
+
   function draw() {
     let r = 100 * sin(frameCount * 0.001);
     let g = 100 * sin(frameCount * 0.005);
     let b = 100 * sin(frameCount * 0.01);
     colorMode(HSB, 100);
     background(r, 100, 80);
-  
+
     if (cont_width > 1023) {
       if (mouseIsPressed) {
         for (let index = 0; index < radius.length; index++) {
           radius[index] += speed;
         }
-  
+
       } else {
         for (let index = 0; index < radius.length; index++) {
           if (radius[index] > copy_radius[index]) {
@@ -97,8 +96,7 @@ if (cont_width>cont_height) {
           }
         }
       }
-  
-  
+
       for (let index = 0; index < img_idx_list.length; index++) {
         imageMode(CENTER);
         rectMode(CENTER);
@@ -110,15 +108,13 @@ if (cont_width>cont_height) {
       }
       arrow();
     }
-  
   }
-  
-  
-  
+
+
   function degreeToRad(degree) {
     return degree * Math.PI / 180;
   }
-  
+
   function arrow() {
     let center_x = mouseX;
     let center_y = mouseY;
@@ -128,17 +124,15 @@ if (cont_width>cont_height) {
     let targetY = mouseY;
     let dy = targetY - y;
     y += dy * easing;
-  
+
     let target_end_x = x;
     let end_dx = target_end_x - end_x;
     end_x += end_dx * easing;
     let target_end_y = y;
     let end_dy = target_end_y - end_y;
     end_y += end_dy * easing;
-  
+
     for (let index = 0; index < radius.length; index++) {
-      // push();
-      // translate(targetX, targetY);
       strokeWeight(3);
       stroke(stroke_color);
       let r = radius[index];
@@ -157,7 +151,7 @@ if (cont_width>cont_height) {
       pop();
     }
   }
-  
+
   function mouseClicked() {
     img_idx += 1;
     if (img_idx == img_list.length) {
@@ -171,40 +165,11 @@ if (cont_width>cont_height) {
     if (img_idx_list.length == 9) {
       img_idx_list.shift();
     }
-  
+
     if (mouse_coord.length == 9) {
       mouse_coord.shift();
     }
-  
-  
-  
-  
-    // if (mouse_coord.length == img_list.length){
-    //   mouse_coord=[]
-    // }
-  
   }
-}else{
-  let stroke_color = "rgb(255,255,255)";
-  let back_color = "rgb(0,0,0)";
-  
-  function setup() {
-    background(back_color);
-    cont_width = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).width);
-    cont_height = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).height);
-    height = cont_height;
-    width = cont_width;
-    console.log(height, width);
-    cnv = createCanvas(width, height);
-    cnv.id("canvas"); //myCanvas로 바꾸기 여차하면
-    cnv.parent(container);
-  }
-  function draw() {
-    let r = 100 * sin(frameCount * 0.001);
-    let g = 100 * sin(frameCount * 0.005);
-    let b = 100 * sin(frameCount * 0.01);
-    colorMode(HSB, 100);
-    background(r, 100, 80);
-  }
-}
+} else {
 
+}
