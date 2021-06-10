@@ -4,10 +4,11 @@ let vw = window.innerWidth * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 document.documentElement.style.setProperty("--vw", `${vw}px`);
 
-if (vw >= 1024) {
-    let table = document.getElementById("text_5");
-    let tds = document.getElementsByTagName("td");
 
+let table = document.getElementById("text_5");
+let tds = document.getElementsByTagName("td");
+
+if (100 * vw >= 1024) {
     table.addEventListener("mouseenter", function () {
         for (let index = 0; index < tds.length; index++) {
             tds[index].style.border = "1px solid white";
