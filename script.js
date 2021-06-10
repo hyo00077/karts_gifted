@@ -1,12 +1,32 @@
 let vh = window.innerHeight * 0.01;
 let vw = window.innerWidth * 0.01;
+let index= 0;
+let body = document.getElementById("myCanvas");
 
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 document.documentElement.style.setProperty("--vw", `${vw}px`);
 
+function format() {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return arguments[0].replace(/\{(\d+)\}/g, function (match, index) {
+        return args[index];
+    });
+}
 
 let table = document.getElementById("text_5");
 let tds = document.getElementsByTagName("td");
+
+function getRandomColor(index) {
+    let r = 100 * Math.sin(index * 0.001);
+    let color= format("hsl({0},100%,70%)", r);
+
+    return color;
+}
+
+function changeColor(){
+    body.style.backgroundColor= getRandomColor(index);
+    index+= 1;
+  }
 
 if (100 * vw >= 1024) {
     table.addEventListener("mouseenter", function () {
@@ -92,4 +112,6 @@ if (100 * vw >= 1024) {
         let element = heads[index];
         element.onclick = click_head;
     }
+} else {
+    setInterval(changeColor,1);
 }
