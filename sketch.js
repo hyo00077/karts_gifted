@@ -18,7 +18,7 @@ if (cont_width > 1023) {
   /////////////////
 
   // 마우스 커서 확산 관련 변수
-  let num_radius = 8;
+  let num_radius = 4;
   let radius = [];
   let copy_radius = [];
   let step = degreeToRad(360 / num_radius);
@@ -162,11 +162,11 @@ if (cont_width > 1023) {
     //   img_idx=0;
     // }
     img_idx_list.push(img_idx);
-    if (img_idx_list.length == 9) {
+    if (img_idx_list.length == 4) {
       img_idx_list.shift();
     }
 
-    if (mouse_coord.length == 9) {
+    if (mouse_coord.length == 4) {
       mouse_coord.shift();
     }
   }
