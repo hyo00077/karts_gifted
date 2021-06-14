@@ -75,10 +75,11 @@
     justify-content: center;
     align-items: center;
     font-size: 300%;
-    text-align: center;
-    font-family: aktiv-grotesk-extended, sans-serif;
-    font-weight: 900;
-    font-style: italic;
+    font-family: ocr-a-std, monospace;
+    font-weight: 400;
+    font-style: normal;
+
+
   }
 
   .marquee {
@@ -451,7 +452,7 @@
     /* display: flex;
     flex-direction: column; */
     position: absolute;
-    top:0%;
+    top: 0%;
     left: 0%;
     justify-content: center;
     align-items: center;
@@ -463,7 +464,7 @@
     /* display: flex;
     flex-direction: column; */
     position: absolute;
-    top:90%;
+    top: 90%;
     left: 0%;
     justify-content: center;
     align-items: top;
@@ -478,18 +479,18 @@
     /* display: flex;
     flex-direction: column; */
     position: absolute;
-    top:0%;
-    left:0%;
+    top: 0%;
+    left: 0%;
     height: 100%;
     width: 100%;
-    overflow:hidden;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     font-size: 9rem;
     text-align: center;
-    font-family: aktiv-grotesk-extended, sans-serif;
-    font-weight: 900;
-    font-style: italic;
+    font-family: ocr-a-std, monospace;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .marquee {
@@ -532,8 +533,8 @@
     background-color: white;
   }
 
-  .line_upper{
-    position:absolute;
+  .line_upper {
+    position: absolute;
     top: calc(100% - 3px);
   }
 
@@ -546,48 +547,47 @@
     overflow: hidden;
   }
 
-  div.slick-slide div {
-    height: 100%;
-  }
-
   div.content_box {
+    position: relative;
     width: 100%;
-    padding: 4rem;
 
-    height: 100%;
     box-sizing: border-box;
     overflow: hidden;
   }
 
   div.text_box {
-    /* display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr; */
-    height: 80%;
+    box-sizing: border-box;
+    margin: 4rem;
     text-align: left;
     font-size: 2.0rem;
     line-height: 2.9rem;
     white-space: normal;
     overflow: scroll;
     overflow-x: hidden;
-    /* background-color: rgba(11, 123, 242, 0.0); */
+    height: calc(100% - 8rem);
     color: rgba(255, 255, 255, 1);
-    /* border: 3px solid rgba(255, 255, 255, 0); */
   }
 
-  /* div.head_box {
-    position: relative;
-    top: calc(100% - 70rem);
-    display: grid;
-    height: 20%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
+  /* div.content_box:hover{
+    background-color: black;
   } */
+
+  div.head_box {
+    font-size: 3rem;
+    font-family: noto-sans-cjk-kr, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    margin-right: 1rem;
+  }
 
   div.text_box p {
     margin-bottom: 2.9rem;
+  }
+
+  div.slick-slide>div {
+    height: 100%;
+    overflow: hidden;
   }
 
   table.schedule {
@@ -646,10 +646,12 @@
     height: 5rem;
     z-index: 5;
   }
-  line{
+
+  line {
     stroke: black;
     stroke-width: 5px;
   }
+
   .slick-list {
     height: 100%;
   }
@@ -658,7 +660,7 @@
     height: 100%;
   }
 
-  .slick-arrow{
+  .slick-arrow {
     display: inline-block;
   }
 
@@ -666,4 +668,3 @@
     display: flex;
   } */
 }
-

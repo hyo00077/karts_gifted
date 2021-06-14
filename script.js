@@ -18,7 +18,7 @@ let tds = document.getElementsByTagName("td");
 
 function getRandomColor(index) {
     let r = 100 * Math.sin(index * 0.001);
-    let color= format("hsl({0},100%,70%)", r);
+    let color= format("hsl({0},100%,40%)", r);
 
     return color;
 }

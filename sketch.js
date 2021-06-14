@@ -2,14 +2,14 @@
 let container = document.getElementById("myCanvas");
 let cont_width;
 let cont_height;
-cont_width = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).width);
-cont_height = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).height);
+cont_width = window.innerWidth;
+cont_height = window.innerHeight;
 
 if (cont_width > 1023) {
   function windowResized() {
     loop();
-    cont_width = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).width);
-    cont_height = parseInt(window.getComputedStyle(document.getElementById("myCanvas")).height);
+    cont_width = window.innerWidth;
+    cont_height = window.innerHeight;
     height = cont_height;
     width = cont_width;
     resizeCanvas(width, height);
@@ -170,6 +170,6 @@ if (cont_width > 1023) {
       mouse_coord.shift();
     }
   }
-}else{
-  
+} else {
+
 }
