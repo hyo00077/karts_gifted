@@ -81,7 +81,7 @@ if (cont_width > 1023) {
     let g = 100 * sin(frameCount * 0.005);
     let b = 100 * sin(frameCount * 0.01);
     colorMode(HSB, 100);
-    background(r, 100, 80);
+    background(r, 100, 90);
 
     if (cont_width > 1023) {
       if (mouseIsPressed) {

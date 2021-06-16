@@ -68,6 +68,7 @@
 
   div.title {
     flex: auto;
+    width: 100%;
     /* padding:1rem; */
     display: flex;
     flex-direction: column;
@@ -499,13 +500,12 @@
   }
 
   .marquee {
-    margin: 0 auto;
+    margin: 2% 0 auto;
     white-space: nowrap;
     overflow: hidden;
-    /* position: absolute; */
   }
 
-  .marquee span {
+  .marquee{
     display: inline-block;
     /* padding-left: 100vw; */
     animation: marquee 40s linear infinite;
@@ -513,7 +513,8 @@
 
   }
 
-  .marquee2 span {
+  .marquee2{
+    display: inline-block;
     animation-delay: 20s;
     -webkit-animation-delay: 20s;
   }
@@ -593,6 +594,10 @@
   div.slick-slide>div {
     height: 100%;
     overflow: hidden;
+  }
+
+  table {
+    margin: 0 auto;
   }
 
   table.schedule {
