@@ -60,8 +60,10 @@ if (100 * vw >= 1024) {
             element.style.position = "absolute";
             let random_num_y = Math.floor(Math.random() * (window_height - height)) + 1;
             let random_num_x = Math.floor(Math.random() * (window_width - width - width_content)) + width_content;
-            element.style.top = random_num_y.toString() + "px";
-            element.style.left = random_num_x.toString() + "px";
+            let left_margin= 20*index;
+            
+            element.style.top ="calc(10% - 3px)";
+            element.style.left = format("{0}%", left_margin);
             // console.log(random_num_y.toString()+"px");
             // console.log(random_num_x.toString()+"px");
         }
@@ -85,12 +87,15 @@ if (100 * vw >= 1024) {
             console.log(index + " " + random_num_x.toString() + "px");
         }
     })
-
+    let grid_line= document.getElementsByClassName("grid_line");
+    let content_boxs= document.getElementsByClassName("content_box");
+    
     let click_head = function () {
         let id = this.id;
         let active_head = this.innerHTML;
         active.innerHTML = active_head;
-        console.log(active_head);
+        active.style.display="block";
+        console.log(id);
         // console.log(id);
         let only_num = id.substring(5, 6);
         // console.log(only_num);
@@ -101,16 +106,52 @@ if (100 * vw >= 1024) {
             if (only_num == content_id) {
                 element.style.display = "grid";
                 element.getElementsByClassName("text_box")[0].scrollTop = 0;
+                element.getElementsByClassName("text_box")[0].style= "border: 3px solid white";
             } else {
                 element.style.display = "none";
             }
         }
+        for (let index = 0; index < grid_line.length; index++) {
+            let element = grid_line[index];
+            element.style.display="none";
+        }
     }
+
+    let click_content= function(){
+        for (let index = 0; index < content_boxs.length; index++) {
+            let element = content_boxs[index];
+            element.style.display="none";
+        }
+        this.style.display="block";
+        let id= this.id;
+        let only_num = id.substring(4, 5);
+        console.log("얘 아이디는", only_num);
+        for (let index = 0; index < heads.length; index++) {
+            let element = heads[index];
+            let content_id = element.id;
+            content_id = content_id.substring(5, 6);
+            console.log(content_id);
+            if (only_num == content_id) {
+                let active_head = element.innerHTML;
+                active.innerHTML = active_head;
+                active.style.display="block";
+            } else {
+                // element.style.display = "none";
+            }
+        }
+        for (let index = 0; index < grid_line.length; index++) {
+            let element = grid_line[index];
+            element.style.display="none";
+        }
+    }
+
 
 
     for (let index = 0; index < heads.length; index++) {
         let element = heads[index];
         element.onclick = click_head;
+        let content = content_boxs[index];
+        content.onclick = click_content;
     }
 } else {
     setInterval(changeColor,1);

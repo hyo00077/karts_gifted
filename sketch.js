@@ -18,7 +18,7 @@ if (cont_width > 1023) {
   /////////////////
 
   // 마우스 커서 확산 관련 변수
-  let num_radius = 4;
+  let num_radius = 5;
   let radius = [];
   let copy_radius = [];
   let step = degreeToRad(360 / num_radius);
@@ -32,7 +32,7 @@ if (cont_width > 1023) {
 
   for (let index = 0; index < num_radius; index++) {
     let element = radius[index];
-    element = 200;
+    element = 250;
     radius.push(element);
     copy_radius.push(element);
   }
@@ -127,10 +127,10 @@ if (cont_width > 1023) {
 
     let target_end_x = x;
     let end_dx = target_end_x - end_x;
-    end_x += end_dx * easing;
+    end_x += end_dx * easing*0.2;
     let target_end_y = y;
     let end_dy = target_end_y - end_y;
-    end_y += end_dy * easing;
+    end_y += end_dy * easing*0.2;
 
     for (let index = 0; index < radius.length; index++) {
       strokeWeight(3);
@@ -139,7 +139,7 @@ if (cont_width > 1023) {
       push();
       translate(targetX, targetY);
       let v1 = createVector(x - mouseX, y - mouseY);
-      let v2 = createVector(Math.cos(step * index) * r + end_x - targetX, Math.sin(step * index) * r + end_y - targetY);
+      let v2 = createVector(Math.cos(step * index - degreeToRad(18)) * r + end_x - targetX, Math.sin(step * index- degreeToRad(18)) * r + end_y - targetY);
       line(v1.x, v1.y, v2.x, v2.y);
       rotate(v2.heading());
       translate(v2.mag(), 0);
