@@ -122,7 +122,7 @@ if (100 * vw >= 1024) {
             let element = content_boxs[index];
             element.style.display="none";
         }
-        this.style.display="block";
+        this.style.display="grid";
         let id= this.id;
         let only_num = id.substring(4, 5);
         console.log("얘 아이디는", only_num);

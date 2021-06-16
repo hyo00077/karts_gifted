@@ -135,6 +135,10 @@
     overflow: hidden;
   }
 
+  div.content_box:hover {
+  z-index: 99998;
+  }
+
   div#box_1 {
     grid-column: 1;
     grid-row: 1;
@@ -204,9 +208,6 @@
   }
 
   div.text_box:hover {
-    /* background-color: rgb(155, 155, 155);
-    color: white;
-    border: 3px solid white; */
     z-index: 99999;
     overflow-y: scroll;
   }
