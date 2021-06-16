@@ -215,7 +215,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    
+
   }
 
   div.active#active {
@@ -224,10 +224,13 @@
     font-size: 8rem;
     font-family: noto-sans-cjk-kr, sans-serif;
     font-weight: 700;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+    color: rgb(155, 155, 155);
     position: absolute;
     top: calc(90% - 10rem);
     left: 20%;
-    z-index:2;
+    z-index: 2;
   }
 
   @keyframes marquee3 {
