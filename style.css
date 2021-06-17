@@ -78,8 +78,6 @@
     font-family: ocr-a-std, monospace;
     font-weight: 400;
     font-style: normal;
-
-
   }
 
   .marquee {
@@ -588,7 +586,7 @@
   }
 
   div.text_box p {
-    margin-bottom: 2.9rem;
+    margin-bottom: 3.5rem;
   }
 
   div.slick-slide>div {
@@ -673,7 +671,11 @@
   .slick-arrow {
     display: inline-block;
   }
-
+  img.gallery {
+    box-sizing: border-box;
+    margin: 2rem 0;
+    border: 1.5px solid rgba(255, 255, 255, 1);
+    }
   /* .slick-active {
     display: flex;
   } */
