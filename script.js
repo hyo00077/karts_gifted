@@ -13,7 +13,7 @@ function format() {
     });
 }
 
-let table = document.getElementById("text_5");
+let table = document.getElementById("text_4");
 let tds = document.getElementsByTagName("td");
 
 function getRandomColor(index) {
@@ -60,7 +60,7 @@ if (100 * vw >= 1024) {
             element.style.position = "absolute";
             let random_num_y = Math.floor(Math.random() * (window_height - height)) + 1;
             let random_num_x = Math.floor(Math.random() * (window_width - width - width_content)) + width_content;
-            let left_margin= 20*index;
+            let left_margin= 25*index;
             
             element.style.top ="calc(10% - 3px)";
             element.style.left = format("{0}%", left_margin);
@@ -125,7 +125,7 @@ if (100 * vw >= 1024) {
         this.style.display="grid";
         let id= this.id;
         let only_num = id.substring(4, 5);
-        console.log("얘 아이디는", only_num);
+        // console.log("얘 아이디는", only_num);
         for (let index = 0; index < heads.length; index++) {
             let element = heads[index];
             let content_id = element.id;

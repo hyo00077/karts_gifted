@@ -22,17 +22,17 @@ if (cont_width > 1023) {
   let radius = [];
   let copy_radius = [];
   let step = degreeToRad(360 / num_radius);
-  let arrow_end_Value = 40;
+  let arrow_end_Value = 20;
   let easing = 0.05;
   let x = 1;
   let y = 1;
   let end_x = 1;
   let end_y = 1;
-  let speed = 100;
+  let speed = 10;
 
   for (let index = 0; index < num_radius; index++) {
     let element = radius[index];
-    element = 250;
+    element = 100;
     radius.push(element);
     copy_radius.push(element);
   }
@@ -100,11 +100,11 @@ if (cont_width > 1023) {
       for (let index = 0; index < img_idx_list.length; index++) {
         imageMode(CENTER);
         rectMode(CENTER);
-        image(img_list[img_idx_list[index]], mouse_coord[index][0], mouse_coord[index][1], img_list[img_idx_list[index]].width / 4, img_list[img_idx_list[index]].height / 4);
+        image(img_list[img_idx_list[index]], mouse_coord[index][0], mouse_coord[index][1], img_list[img_idx_list[index]].width / 3.5, img_list[img_idx_list[index]].height / 3.5);
         noFill();
         strokeWeight(3);
         stroke(stroke_color);
-        rect(mouse_coord[index][0], mouse_coord[index][1], img_list[img_idx_list[index]].width / 4, img_list[img_idx_list[index]].height / 4);
+        rect(mouse_coord[index][0], mouse_coord[index][1], img_list[img_idx_list[index]].width / 3.5, img_list[img_idx_list[index]].height / 3.5);
       }
       arrow();
     }
@@ -131,10 +131,12 @@ if (cont_width > 1023) {
     let target_end_y = y;
     let end_dy = target_end_y - end_y;
     end_y += end_dy * easing*0.2;
+    strokeCap(SQUARE);
+    strokeWeight(3);
+    stroke(stroke_color);
 
     for (let index = 0; index < radius.length; index++) {
-      strokeWeight(3);
-      stroke(stroke_color);
+      
       let r = radius[index];
       push();
       translate(targetX, targetY);
@@ -143,11 +145,11 @@ if (cont_width > 1023) {
       line(v1.x, v1.y, v2.x, v2.y);
       rotate(v2.heading());
       translate(v2.mag(), 0);
-      let arrow_end = createVector(0, 0);
-      let arrow_end_end_1 = createVector(Math.cos(degreeToRad(140)) * arrow_end_Value, Math.sin(degreeToRad(140)) * arrow_end_Value);
-      let arrow_end_end_2 = createVector(Math.cos(degreeToRad(220)) * arrow_end_Value, Math.sin(degreeToRad(220)) * arrow_end_Value);
-      line(arrow_end.x, arrow_end.y, arrow_end_end_1.x, arrow_end_end_1.y);
-      line(arrow_end.x, arrow_end.y, arrow_end_end_2.x, arrow_end_end_2.y);
+      // let arrow_end = createVector(0, 0);
+      // let arrow_end_end_1 = createVector(Math.cos(degreeToRad(140)) * arrow_end_Value, Math.sin(degreeToRad(140)) * arrow_end_Value);
+      // let arrow_end_end_2 = createVector(Math.cos(degreeToRad(220)) * arrow_end_Value, Math.sin(degreeToRad(220)) * arrow_end_Value);
+      // line(arrow_end.x, arrow_end.y, arrow_end_end_1.x, arrow_end_end_1.y);
+      // line(arrow_end.x, arrow_end.y, arrow_end_end_2.x, arrow_end_end_2.y);
       pop();
     }
   }

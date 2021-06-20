@@ -1,6 +1,7 @@
 @import "reset.css";
 @import "slick.css";
 @import url("https://use.typekit.net/wll5okd.css");
+@import url('//cdn.jsdelivr.net/gh/Dalgona/neodgm-webfont@1.521/neodgm/style.css');
 
 @media screen and (min-width: 1024px) {
   html {
@@ -48,6 +49,7 @@
     align-items: center;
     width: 100%;
     height: 10%;
+    
   }
 
   .heading_under {
@@ -59,6 +61,11 @@
     height: 10%;
   }
 
+  .heading_under>div.title p{
+    font-family: 'NeoDunggeunmo';
+    letter-spacing: 0.2rem;
+  }
+  
   .lining {
     width: 100%;
     height: 3px;
@@ -78,6 +85,9 @@
     font-family: ocr-a-std, monospace;
     font-weight: 400;
     font-style: normal;
+    letter-spacing: -0.2rem;
+    word-spacing:-1rem;
+
   }
 
   .marquee {
@@ -119,7 +129,7 @@
     height: 80%;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1fr 3px 1fr 3px 1fr 3px 1fr 3px 1fr;
+    grid-template-columns: 1fr 3px 1fr 3px 1fr 3px 1fr;
     grid-template-rows: 1fr;
     place-content: top space-evenly;
 
@@ -169,17 +179,17 @@
 
   }
 
+  /* div#box_4 {
+    grid-column: 7;
+    display: none;
+    grid-row:6/10;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  } */
+
   div#box_4 {
     grid-column: 7;
-    /* display: none; */
-    /* grid-row:6/10; */
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr); */
-  }
-
-  div#box_5 {
-    grid-column: 9;
     /* display: none; */
     /* grid-row:6/10; */
     /* display: grid;
@@ -221,14 +231,14 @@
   div.active#active {
     display: none;
     margin: 1rem;
-    font-size: 8rem;
+    font-size: 6rem;
     font-family: noto-sans-cjk-kr, sans-serif;
     font-weight: 700;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
     color: rgb(155, 155, 155);
     position: absolute;
-    top: calc(90% - 10rem);
+    top: calc(90% - 8rem);
     left: 20%;
     z-index: 2;
   }
@@ -477,6 +487,12 @@
     /* vertical-align:; */
   }
 
+  .heading_under>div.title p{
+    font-family: 'NeoDunggeunmo';
+    letter-spacing: 0.2rem;
+
+  }
+
   div.title {
     /* flex: auto; */
     /* padding:1rem; */
@@ -495,6 +511,8 @@
     font-family: ocr-a-std, monospace;
     font-weight: 400;
     font-style: normal;
+    letter-spacing: -0.2rem;
+    word-spacing:-1rem;
   }
 
   .marquee {
@@ -508,7 +526,6 @@
     /* padding-left: 100vw; */
     animation: marquee 40s linear infinite;
     -webkit-animation: marquee 40s linear infinite;
-
   }
 
   .marquee2{
@@ -674,8 +691,11 @@
   img.gallery {
     box-sizing: border-box;
     margin: 2rem 0;
-    border: 1.5px solid rgba(255, 255, 255, 1);
+    /* border: 3px solid rgba(255, 255, 255, 1); */
+    border-radius:5%;
     }
+
+  
   /* .slick-active {
     display: flex;
   } */

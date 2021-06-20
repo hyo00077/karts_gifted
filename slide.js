@@ -20,13 +20,13 @@ $( document ).ready(function() {
         $("#text_2").prepend('<div class="head_box" id="head_2"><p>2. 교육방향</p></div>');
         $("#text_3").prepend('<div class="head_box" id="head_3"><p>3. 교육과정 커리큘럼</p></div>');
         $("#text_4").prepend('<div class="head_box" id="head_4"><p>4. 교육과정 커리큘럼</p></div>');
-        $("#text_5").prepend('<div class="head_box" id="head_5"><p>5. 교육과정 커리큘럼</p></div>');
-        $("#box_5").after('<div class="content_box" id="box_6"><div class="text_box" id="text_6"></div></div>');
-        $("#text_6").prepend('<div class="head_box" id="head_6"><p>6. 갤러리</p></div>');
+        // $("#text_5").prepend('<div class="head_box" id="head_5"><p>5. 교육과정 커리큘럼</p></div>');
+        $("#box_4").after('<div class="content_box" id="box_5"><div class="text_box" id="text_5"></div></div>');
+        $("#text_5").prepend('<div class="head_box" id="head_5"><p>5. 갤러리</p></div>');
 
         for (let index = 0; index < 45; index++) {
             let element = "<img class='gallery' src='./source/background/{0}.jpg' width='100%' object-fit='contain'>".format(index);
-            $(element).appendTo("#text_6");
+            $(element).appendTo("#text_5");
         }
 
         $(document).ready(function(){
