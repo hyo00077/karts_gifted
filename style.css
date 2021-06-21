@@ -231,15 +231,14 @@
   div.active#active {
     display: none;
     margin: 1rem;
-    font-size: 6rem;
+    font-size: 4rem;
     font-family: noto-sans-cjk-kr, sans-serif;
     font-weight: 700;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
     color: rgb(155, 155, 155);
     position: absolute;
-    top: calc(90% - 8rem);
-    left: 20%;
+    top: calc(90% - 6.4rem);
     z-index: 2;
   }
 

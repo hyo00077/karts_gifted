@@ -32,14 +32,12 @@ if (100 * vw >= 1024) {
     table.addEventListener("mouseenter", function () {
         for (let index = 0; index < tds.length; index++) {
             tds[index].style.border = "3px solid white";
-            console.log("tds has changed");
         };
     });
 
     table.addEventListener("mouseleave", function () {
         for (let index = 0; index < tds.length; index++) {
             tds[index].style.border = "";
-            console.log("tds has changed");
         };
     });
 
@@ -64,8 +62,6 @@ if (100 * vw >= 1024) {
             
             element.style.top ="calc(10% - 3px)";
             element.style.left = format("{0}%", left_margin);
-            // console.log(random_num_y.toString()+"px");
-            // console.log(random_num_x.toString()+"px");
         }
     })
 
@@ -80,11 +76,8 @@ if (100 * vw >= 1024) {
             element.style.position = "absolute";
             let random_num_y = Math.floor(Math.random() * (window_height - height)) + 1;
             let random_num_x = Math.floor(Math.random() * (window_width - width - width_content)) + width_content;
-            console.log(width_content);
             element.style.top = random_num_y.toString() + "px";
             element.style.left = random_num_x.toString() + "px";
-            console.log(index + " " + random_num_y.toString() + "px");
-            console.log(index + " " + random_num_x.toString() + "px");
         }
     })
     let grid_line= document.getElementsByClassName("grid_line");
@@ -94,11 +87,43 @@ if (100 * vw >= 1024) {
         let id = this.id;
         let active_head = this.innerHTML;
         active.innerHTML = active_head;
-        active.style.display="block";
+        
         console.log(id);
-        // console.log(id);
         let only_num = id.substring(5, 6);
-        // console.log(only_num);
+        let left= only_num*25;
+        if (left >=100) {
+            left=25;
+            active.style.float="right";
+            active.style="text-align:right";
+            active.style.right = format("{0}%", left);
+            active.style.left = "auto";
+            active.style.display="block";
+        }else if(left>=75){
+            left=50;
+            active.style.float="right";
+            active.style="text-align:right";
+            active.style.right = format("{0}%", left);
+            active.style.left = "auto";
+            active.style.display="block";
+        }else if (left==50){
+            left= 50;
+            active.style.float= "left";
+            active.style="text-align:left";
+            active.style.left= format("{0}%", left);
+
+            active.style.right= "auto";
+            active.style.display="block";
+        }else if (left==25){
+            left= 25;
+            active.style.float= "left";
+            active.style="text-align:left";
+            active.style.left= format("{0}%", left);
+
+            active.style.right= "auto";
+            active.style.display="block";
+        }
+
+        console.log(only_num);
         for (let index = 0; index < content_box.length; index++) {
             let element = content_box[index];
             let content_id = element.id;
@@ -135,6 +160,38 @@ if (100 * vw >= 1024) {
                 let active_head = element.innerHTML;
                 active.innerHTML = active_head;
                 active.style.display="block";
+                let left= only_num*25;
+                if (left >=100) {
+                    left=25;
+                    active.style.float="right";
+                    active.style="text-align:right";
+                    active.style.right = format("{0}%", left);
+                    active.style.left = "auto";
+                    active.style.display="block";
+                }else if(left>=75){
+                    left=50;
+                    active.style.float="right";
+                    active.style="text-align:right";
+                    active.style.right = format("{0}%", left);
+                    active.style.left = "auto";
+                    active.style.display="block";
+                }else if (left==50){
+                    left= 50;
+                    active.style.float= "left";
+                    active.style="text-align:left";
+                    active.style.left= format("{0}%", left);
+
+                    active.style.right= "auto";
+                    active.style.display="block";
+                }else if (left==25){
+                    left= 25;
+                    active.style.float= "left";
+                    active.style="text-align:left";
+                    active.style.left= format("{0}%", left);
+
+                    active.style.right= "auto";
+                    active.style.display="block";
+                }
             } else {
                 // element.style.display = "none";
             }

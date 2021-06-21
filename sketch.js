@@ -23,12 +23,12 @@ if (cont_width > 1023) {
   let copy_radius = [];
   let step = degreeToRad(360 / num_radius);
   let arrow_end_Value = 20;
-  let easing = 0.05;
+  let easing = 0.4;
   let x = 1;
   let y = 1;
   let end_x = 1;
   let end_y = 1;
-  let speed = 10;
+  let speed = 20;
 
   for (let index = 0; index < num_radius; index++) {
     let element = radius[index];
