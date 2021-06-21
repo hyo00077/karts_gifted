@@ -31,7 +31,7 @@ function changeColor(){
 if (100 * vw >= 1024) {
     table.addEventListener("mouseenter", function () {
         for (let index = 0; index < tds.length; index++) {
-            tds[index].style.border = "1px solid white";
+            tds[index].style.border = "3px solid white";
             console.log("tds has changed");
         };
     });

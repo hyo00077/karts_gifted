@@ -145,11 +145,11 @@ if (cont_width > 1023) {
       line(v1.x, v1.y, v2.x, v2.y);
       rotate(v2.heading());
       translate(v2.mag(), 0);
-      // let arrow_end = createVector(0, 0);
-      // let arrow_end_end_1 = createVector(Math.cos(degreeToRad(140)) * arrow_end_Value, Math.sin(degreeToRad(140)) * arrow_end_Value);
-      // let arrow_end_end_2 = createVector(Math.cos(degreeToRad(220)) * arrow_end_Value, Math.sin(degreeToRad(220)) * arrow_end_Value);
-      // line(arrow_end.x, arrow_end.y, arrow_end_end_1.x, arrow_end_end_1.y);
-      // line(arrow_end.x, arrow_end.y, arrow_end_end_2.x, arrow_end_end_2.y);
+      let arrow_end = createVector(0, 0);
+      let arrow_end_end_1 = createVector(Math.cos(degreeToRad(140)) * arrow_end_Value, Math.sin(degreeToRad(140)) * arrow_end_Value);
+      let arrow_end_end_2 = createVector(Math.cos(degreeToRad(220)) * arrow_end_Value, Math.sin(degreeToRad(220)) * arrow_end_Value);
+      line(arrow_end.x, arrow_end.y, arrow_end_end_1.x, arrow_end_end_1.y);
+      line(arrow_end.x, arrow_end.y, arrow_end_end_2.x, arrow_end_end_2.y);
       pop();
     }
   }
